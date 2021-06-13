@@ -16,6 +16,9 @@ namespace Pedidos.Repository.Maps
         public override void Configure(EntityTypeBuilder<Pedido> builder)
         {
             base.Configure(builder);
+            builder.Property(x => x.Numero).HasColumnName("nome").HasMaxLength(10).IsRequired();
+            builder.Property(x => x.ValorTotal).HasColumnName("preco").HasPrecision(17, 2).IsRequired();
+            builder.Property(x => x.Entrega).HasColumnName("entrega");
         }
     }
 }

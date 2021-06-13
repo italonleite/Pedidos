@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Pedidos.Repository.Maps
 {
-    public class ClienteMap : BaseDomainMap<Cliente>
+    public class CategoriaProdutoMap : BaseDomainMap<CategoriaProduto>
     {
-        public ClienteMap() : base("Cliente") { }
+        public CategoriaProdutoMap() : base("Cidade") { }
         
-        public override void Configure(EntityTypeBuilder<Cliente> builder)
+        public override void Configure(EntityTypeBuilder<CategoriaProduto> builder)
         {
             base.Configure(builder);
 
-            builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Cpf).HasColumnName("cpf").HasMaxLength(11).IsRequired();
+            builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(50).IsRequired();           
             builder.Property(x => x.Ativo).HasColumnName("ativo").IsRequired();
+
         }
     }
 }

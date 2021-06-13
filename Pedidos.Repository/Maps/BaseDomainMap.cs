@@ -23,6 +23,12 @@ namespace Pedidos.Repository.Maps
             {
                 builder.ToTable(_tableName);
             }
+
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();
+
+            builder.HasKey(x => x.CriadoEm);
+            builder.Property(x => x.Id).HasColumnName("criado_em").IsRequired();
         }
     }
 }
