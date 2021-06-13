@@ -23,6 +23,8 @@ namespace Pedidos.Repository.Maps
             builder.Property(x => x.Complemento).HasColumnName("complemento").HasMaxLength(50);
             builder.Property(x => x.Cep).HasColumnName("cep").HasMaxLength(8);
 
+            //relacionamento 1 to 1
+            builder.HasOne(x => x.Cliente).WithOne(x => x.Endereco).HasForeignKey<Cliente>(x => x.EnderecoId)
 
         }
     }
