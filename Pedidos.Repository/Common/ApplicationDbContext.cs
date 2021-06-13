@@ -16,6 +16,7 @@ namespace Pedidos.Repository
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<PromocaoProduto> PromocaoProdutos { get; set; }
         public DbSet<Combo> Combos { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
